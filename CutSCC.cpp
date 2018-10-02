@@ -9,6 +9,9 @@ using vpii = vector<pii>;
 
 // 1-based numbering
 // O(V+E)
+// 2-SAT : "(x or ~y) and ..." into (~x to ~y) and (y to x)
+// if x and ~x are in same scc, unsatisfiable
+// if not, later one (smaller num of sccID) is true
 struct scc{
     vvi adj[2];
     vi vis, lst;
